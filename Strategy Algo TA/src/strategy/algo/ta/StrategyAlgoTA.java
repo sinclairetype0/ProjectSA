@@ -29,7 +29,9 @@ public class StrategyAlgoTA {
     }
 
    public static void main(String args[]) {
-        int n = 4;
-        towerOfHanoi(n,'A','B','C');
+        Scanner input = new Scanner (System.in);
+        System.out.print("Masukkan jumlah disk : ");
+        int disk = input.nextInt();
+        towerOfHanoi(disk, 'A', 'B', 'C'); 
     }
 }
