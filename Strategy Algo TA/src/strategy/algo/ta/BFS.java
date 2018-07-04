@@ -43,8 +43,8 @@ public class BFS {
             this.tetangga = tetangga;
         }
     }
-    public bfslisttetangga()
-	{
-		q = new LinkedList<Node>();
-	}
+	
+    public bfslisttetangga() {
+	q = new LinkedList<Node>();
+    }
 }
