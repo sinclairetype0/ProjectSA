@@ -44,7 +44,17 @@ public class BFS {
         }
     }
 	
+    //listtetangga		
     public bfslisttetangga() {
 	q = new LinkedList<Node>();
+    }
+	
+     //bfs
+    public void bfs(Node node) {
+    	q.add(node);
+	node.visited=true;
+	    
+	    
+	    
     }
 }
