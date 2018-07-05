@@ -6,6 +6,7 @@
 package strategy.algo.ta;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
@@ -14,8 +15,8 @@ import java.util.Queue;
  * @author bim
  */
 public class BFS {
-    private Queue<Node> q;
-    static ArrayList<Node> nodes = new ArrayList<Node>();
+    Queue<Node> q;
+    ArrayList<Node> nodes = new ArrayList<Node>();
     
     static class Node {
         int data;
@@ -43,18 +44,28 @@ public class BFS {
             this.tetangga = tetangga;
         }
     }
-	
-    //listtetangga		
-    public bfslisttetangga() {
-	q = new LinkedList<Node>();
+			
+ BFS() {  
+        q = new LinkedList<Node>();  
     }
-	
-     //bfs
-    public void bfs(Node node) {
-    	q.add(node);
-	node.visited=true;
-	    
-	    
-	    
-    }
+ 
+ void bfs(Node node) {  
+        q.add(node);  
+        node.kunjung = true;  
+        while (!q.isEmpty()) 
+        {  
+            Node element = q.remove();  
+            System.out.println(element.data + " ");  
+            List<Node> neighbours = element.getTetangga();  
+            for (int i = 0; i < neighbours.size(); i++) 
+            {  
+                Node n = neighbours.get(i);  
+                if (n != null && !n.kunjung) 
+                {  
+                q.add(n);  
+                n.kunjung = true; 
+                }  
+            }  
+        }  
+    }	
 }
